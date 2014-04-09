@@ -1,14 +1,21 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>RhinoApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Rhino For Erongo</title>
+    <%= stylesheet_link_tag "application", media: "all",
+                                           "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%=render 'layouts/shim'%>
+  </head>
+  <body>
+    <%=render 'layouts/header'%>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%=render 'layouts/footer'%>
+  </body>
 </html>
