@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-RhinoApp::Application.config.secret_key_base = '4796900510efe618dbf5dca25d68541df367e6a8a434f7d22fc6b0d89f4e0e2fab86e4dbc2f4ffab8e68a57ab006d5abac0b0f0ffbf5e072f9f39c7b561a5bb7'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+RhinoApp::Application.config.secret_key_base = secure_token
