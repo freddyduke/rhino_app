@@ -1,6 +1,4 @@
-<html>
-  <head>
-    <title>Rhino For Erongo</title>
+<html> <head> <title>Rhino For Erongo</title>
     <%= stylesheet_link_tag "application", media: "all",
                                            "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -8,6 +6,17 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script>
+$(document).ready(function() {
+    $('#myCarousel').carousel({
+interval:   4000
+    });
+    });
+    </script>
+  
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%=render 'layouts/shim'%>
   </head>
