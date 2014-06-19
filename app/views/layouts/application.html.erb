@@ -6,25 +6,11 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script>
-$(document).ready(function() {
-    $('#myCarousel').carousel({
-interval:   4000
-    });
-    });
-    </script>
-  
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%=render 'layouts/shim'%>
+	<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <%=render 'layouts/header'%>
-    <div class="container">
-      <%= yield %>
-    </div>
-    <%=render 'layouts/footer'%>
+	<%=render 'layouts/header'%>
+	<%= yield %>
+	<%=render 'layouts/footer'%>
   </body>
 </html>
